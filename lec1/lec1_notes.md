@@ -8,12 +8,13 @@
 
 * Shell prompt
 
-* ```shell
+* 
+```shell
   date # 显示当前日期
   echo hello # 显示echo后面的参数
   echo hello\ world # 输入含空格的参数
   echo "hello world"
-  ```
+```
 
 * Environment variables
 

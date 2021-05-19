@@ -38,47 +38,45 @@
   * `:quit`，`q` : 关闭当前窗口
 
   * `:w` : 保存
-
     * `w {filename}` : 以指定名称保存文件
     * `:wq` : 保存并关闭
     * `:!q` : 不保存并关闭
-
+    
   * `:e {name of file}` : 打开文件
 
   * `:ls` : 显示打开的buffers
 
-  * `:help {command)"`: 打开命令的帮助
+  * `:!{command}` : 可以执行外部 shell 命令
 
+  * `:help {command)"`: 打开命令的帮助
     * `:help :w`
     * `:help w`
-
+    
   * `:s` : 替换
-
-    * ```shell
+    
+    * 
+      ```shell
       %s/foo/bar/g # replace foo with bar globally in file
-      ```
-
-    * ```shell
       %s/\[.*\](\(.*\))/\1/g # replace named Markdown links with plain URLs
       ```
-
-    * `:!{command}` : 可以执行外部 shell 命令
-
+    
   * `:r {name}` : 插入文件中的内容
-
     * `:r !ls`
-
+    
   * `:set {command}` : 设置
-
     * `set ic` : 忽略大小写
     * `Ctrl-D`，`<TAB>` : 分别展示可能的补全结果和进行补全
 
 * Open buffers
 
   * `:tabnew` : 建立新窗口
-  * `:sp` : 同一个 buffer 可以在多个窗口中打开
+  * `:tabp`，`:tabn` : 向前或向后切换标签页
+  * `:tabc` : 关闭标签
+  * `:tabo` : 关闭其他所有标签
+  * `:sp`，`:vsp` : 同一个 buffer 可以在多个窗口中打开
   * `:qa` : 关闭所有窗口
-
+  * `:Ctrl w + {h,j,k,l}` : 来切换分屏
+  * `:res {+,-}{number}` : 来调整分屏大小
 * Normal mode
 
   * 移动操作
@@ -107,8 +105,8 @@
     * `Ctrl-r` : 撤销之前的撤销命令（Ctrl-z）
     * `dd` : 重复输入命令等于对当前行施加该命令
     * `x` : 删除当前字符
-      * 注意：被删除的内容会被放在寄存器中，可以粘贴
-      * `r`，`R` : 后接要替换的字符，并替换当前单个/多个字符
+    * 注意：被删除的内容会被放在寄存器中，可以粘贴
+    * `r`，`R` : 后接要替换的字符，并替换当前单个/多个字符
     * `y` : 后接移动操作进行复制
     * `p` : 粘贴
     * `A`，`a` : 分别在行末和光标处进入 insert mode
@@ -124,6 +122,7 @@
   * 进入 visual mode 后基本上可以使用 normal mode 的所有操作，进行的移动操作会选中对应的字符，常用于先选中然后按 `y` 复制，返回 normal mode 后再粘贴
   * Visual line mode 以行为单位选中
   * Visual block mode 以矩形框为单位选中
+  * 在 Visual mode 选中后通过 `:normal {command}` 来实现对选中的每一行执行对应的命令
 
 * Marcos （宏）
 
