@@ -140,7 +140,12 @@ done
 * 查找文件及其内容
 
   ```shell
-  find . -name src -type dfind . -path '**/test/**/.py' -type ffind . -mtime -1 # 查找所有在昨天修改过的文件。find . -name "*.tmp" -exec rm {} \;fd "*.py" # 比find更直观的语法locate hello.pdf # 建立数据库，加速文件查找updatedb # 更新数据库grep -R foobarrg "import requests" -t py ~/scratch # ripgreprg "import requests" -t py -C 5 ~/scratchrg -u --files-without-match "^#\!" -t shcat example.sh | fzf # 模糊匹配
+  find . -name src -type dfind . -path '**/test/**/.py' -type ffind . -mtime -1 # 查找所有在昨天修改过的文件
+  find . -name "*.tmp" -exec rm {} \;fd "*.py" # 比find更直观的语法
+  locate hello.pdf # 建立数据库，加速文件查找
+  updatedb # 更新数据库
+  grep -R foobarrg "import requests" -t py ~/scratch # ripgrep
+  rg "import requests" -t py -C 5 ~/scratchrg -u --files-without-match "^#\!" -t shcat example.sh | fzf # 模糊匹配
   ```
 
 * 查找shell命令
