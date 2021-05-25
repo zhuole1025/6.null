@@ -1,6 +1,5 @@
 # Command-line Environment
 ### Job Control
-#### 
 * `sleep {number}`
 * Signals: a UNIX communication mechanism (software interrupts)
     * Press `Ctrl c` to terminate a process, but actually we sand a signal called `SIGINT` to the process, the process deals with the signal and potentially changes the flow of execution based on the information that the signal delivered.
@@ -9,10 +8,10 @@
         ```python
         #!/usr/bin/env python
         import signal, time
-
+        
         def handler(signum, time):
             print("\nI got a SIGINT, but I am not stopping")
-
+        
         signal.signal(signal.SIGINT, handler)
         i = 0
         while True:
@@ -81,10 +80,10 @@
     * use the equivalent of if-statements to apply machine specific customizations  
         ```shell
         if [[ "$(uname)" == "Linux" ]]; then {do_something}; fi
-
+        
         # Check before using shell-specific features
         if [[ "$SHELL" == "zsh" ]]; then {do_something}; fi
-
+        
         # You can also make it machine-specific
         if [[ "$(hostname)" == "myServer" ]]; then {do_something}; fi
         ```
@@ -109,7 +108,7 @@
 ### Exercises
 #### Job control
 1. From what we have seen, we can use some `ps aux | grep` commands to get our jobs’ pids and then kill them, but there are better ways to do it. Start a `sleep 10000` job in a terminal, background it with `Ctrl-Z` and continue its execution with `bg`. Now use `pgrep` to find its pid and `pkill` to kill it without ever typing the pid itself. (Hint: use the `-af` flags).  
-  **solution** :  
+    **solution** :  
   ```shell
   slepp 10000
   Ctrl-Z
@@ -133,7 +132,7 @@
 #### Aliases
 1. Create an alias dc that resolves to cd for when you type it wrongly.  
  **solution** :  
-  `alias dc=cd`
+    `alias dc=cd`
 2. Run `history | awk '{$1="";print substr($0,2)}' | sort | uniq -c | sort -n | tail -n 10` to get your top 10 most used commands and consider writing shorter aliases for them.
 
 #### Dotfiles  
@@ -145,7 +144,7 @@ Let’s get you up to speed with dotfiles.
 4. Test your installation script on a fresh virtual machine.
 5. Migrate all of your current tool configurations to your dotfiles repository.
 6. Publish your dotfiles on GitHub.  
-  [See my github pages](https://github.com/zhuole1025/dotfiles)
+    [See my github pages](https://github.com/zhuole1025/dotfiles)
 
 #### Remote Macgines  
 Install a Linux virtual machine (or use an already existing one) for this exercise. If you are not familiar with virtual machines check out this tutorial for installing one.
