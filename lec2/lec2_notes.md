@@ -15,12 +15,12 @@
 
   ```shell
   vim mcd.sh
-  ​```
+  
   mcd () {
   	mkdir -p "$1" # $1相当于argv[1]
   	cd "$1"
   }
-  ​```
+  
   source mcd.sh
   mcd test
   ```
@@ -141,7 +141,8 @@ done
 
   ```shell
   find . -name src -type dfind . -path '**/test/**/.py' -type ffind . -mtime -1 # 查找所有在昨天修改过的文件
-  find . -name "*.tmp" -exec rm {} \;fd "*.py" # 比find更直观的语法
+  find . -name "*.tmp" -exec rm {} \;
+  fd "*.py" # 比find更直观的语法
   locate hello.pdf # 建立数据库，加速文件查找
   updatedb # 更新数据库
   grep -R foobarrg "import requests" -t py ~/scratch # ripgrep
