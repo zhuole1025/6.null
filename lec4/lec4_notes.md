@@ -35,9 +35,15 @@
 	* awk: based on columns
 	* bc: An arbitrary precision calculator language
 	* R: a progamming languague for statistics
-	* gnuplot
-	* xargs
-	* ffmpeg
+  * `ggplot2` is a great plotting library in R
+  * gnuplot
+  * xargs
+  * ffmpeg
+  * jq: JSON file
+  * pup: HTML file
+  * Perl
+  * vim marcos
+  * Python: pandas library
 ---
 #### Exercise
 1. Take this [short interactive regex tutorial](https://missing.csail.mit.edu/2020/data-wrangling/).
